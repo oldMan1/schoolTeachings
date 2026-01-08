@@ -2,7 +2,7 @@
     "type": "MySQLNotebook",
     "version": "1.0",
     "caption": "DB Notebook",
-    "content": "\\about\nSHOW DATABASES;\nCREATE DATABASE STUDENT_ATTENDANCE;\nUSE STUDENT_ATTENDANCE;\nCREATE TABLE STUDENTS(\nRollNumber INT PRIMARY KEY,\nSName VARCHAR(20),\nSDateOfBirth DATE,\nGUID CHAR(12)\n);\n",
+    "content": "\\about\nSHOW DATABASES;\nCREATE DATABASE STUDENT_ATTENDANCE;\nUSE STUDENT_ATTENDANCE;\nCREATE TABLE STUDENTS(\nRollNumber INT PRIMARY KEY,\nSName VARCHAR(20),\nSDateOfBirth DATE,\nGUID CHAR(12)\n);\n\n",
     "options": {
         "tabSize": 4,
         "indentSize": 4,
@@ -15,12 +15,12 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 11,
-                    "column": 1
+                    "lineNumber": 4,
+                    "column": 24
                 },
                 "position": {
-                    "lineNumber": 11,
-                    "column": 1
+                    "lineNumber": 4,
+                    "column": 24
                 }
             }
         ],
@@ -30,7 +30,7 @@
                 "lineNumber": 2,
                 "column": 1
             },
-            "firstPositionDeltaTop": 61
+            "firstPositionDeltaTop": 165
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -48,12 +48,12 @@
                     "text": [
                         {
                             "type": 2,
-                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
                             "language": "ansi"
                         }
                     ]
                 },
-                "currentHeight": 118.390625,
+                "currentHeight": 210.390625,
                 "currentSet": 1,
                 "statements": [
                     {
@@ -77,10 +77,10 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "2f348ce5-04b4-410e-aee6-0c54c9db76b0"
+                        "2926d4e6-3aea-47c5-a80f-0479def5ec33"
                     ]
                 },
-                "currentHeight": 186,
+                "currentHeight": 209.796875,
                 "currentSet": 1,
                 "statements": [
                     {
@@ -96,9 +96,12 @@
             },
             "data": [
                 {
-                    "tabId": "71c1c183-5e84-46da-a263-7cb46b89af5c",
-                    "resultId": "2f348ce5-04b4-410e-aee6-0c54c9db76b0",
+                    "tabId": "dbe56125-7f83-4fae-bb33-cd80184e4a56",
+                    "resultId": "2926d4e6-3aea-47c5-a80f-0479def5ec33",
                     "rows": [
+                        {
+                            "0": "STUDENT_ATTENDANCE"
+                        },
                         {
                             "0": "information_schema"
                         },
@@ -136,9 +139,9 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 5 records retrieved in 1.744ms"
+                        "text": "OK, 6 records retrieved in 1.165ms"
                     },
-                    "totalRowCount": 5,
+                    "totalRowCount": 6,
                     "hasMoreRows": false,
                     "currentPage": 0,
                     "index": 0,
@@ -156,12 +159,15 @@
                     "type": "text",
                     "text": [
                         {
-                            "type": 2,
+                            "type": 0,
                             "index": 0,
-                            "resultId": "389ad062-dfec-475a-d210-c2d774f05543",
-                            "content": "OK, 1 row affected in 35.388ms"
+                            "content": "MySQL Error (1007): Can't create database 'STUDENT_ATTENDANCE'; database exists",
+                            "language": "ansi"
                         }
-                    ]
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
                 },
                 "currentHeight": 28,
                 "currentSet": 1,
@@ -247,6 +253,26 @@
             "state": {
                 "start": 11,
                 "end": 11,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
                 "language": "mysql",
                 "currentSet": 1,
                 "statements": [

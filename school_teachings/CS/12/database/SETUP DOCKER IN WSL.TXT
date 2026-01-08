@@ -1,0 +1,169 @@
+uname -a
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y ca-certificates curl gnupg lsb-release
+
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo service docker start
+
+sudo service docker status
+
+sudo usermod -aG docker $USER
+
+docker run hello-world
+
+if ! service docker status >/dev/null 2>&1; then
+    sudo service docker start >/dev/null 2>&1
+fi
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+We’ll install Docker Engine directly inside WSL (clean, native, no Docker Desktop dependency unless you want it).
+
+I’ll give you exact commands, minimal fluff.
+
+We assume:
+
+Windows 11
+
+WSL2
+
+Ubuntu (or Debian-based) inside WSL
+
+Step 0 – Quick Sanity Check
+
+In WSL terminal:
+
+uname -a
+
+
+If you see microsoft-standard-WSL2 → perfect.
+
+Step 1 – Update System
+sudo apt update
+sudo apt upgrade -y
+
+Step 2 – Install Required Packages
+sudo apt install -y ca-certificates curl gnupg lsb-release
+
+Step 3 – Add Docker’s Official GPG Key
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+Step 4 – Add Docker Repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+Step 5 – Install Docker Engine
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+Step 6 – Start Docker Service (WSL Way)
+
+WSL does not use systemd by default (unless you enabled it).
+So we start Docker manually:
+
+sudo service docker start
+
+
+Check status:
+
+sudo service docker status
+
+
+You should see: running
+
+Step 7 – Allow Your User to Run Docker (Very Important)
+sudo usermod -aG docker $USER
+
+
+Now close WSL completely and reopen it.
+(This step is mandatory, not optional.)
+
+Step 8 – Test Docker
+
+After reopening WSL:
+
+docker run hello-world
+
+
+If you see:
+
+Hello from Docker!
+
+
+🎯 Docker is correctly installed inside WSL.
+
+Step 9 – Make Docker Start Automatically (Important for You)
+
+Add this to your ~/.bashrc:
+
+if ! service docker status >/dev/null 2>&1; then
+    sudo service docker start >/dev/null 2>&1
+fi
+
+
+This ensures:
+
+Every time WSL starts, Docker starts.
+
+Scalable. Permanent. No babysitting.
+
+At This Point, You Have Achieved
+
+Native Docker in WSL
+
+No Windows dependency
+
+No Docker Desktop requirement
+
+Fully portable setup
+
+Exactly what you wanted architecturally
+
+Next (Immediate, Logical Step)
+
+Now we will:
+👉 Run MySQL in Docker inside WSL
+
+This will give you:
+
+localhost:3306
+
+no network hacks
+
+no bind-address drama
+
+no firewall nonsense
+
+perfect mysql-shell + Python compatibility
+
+Before We Proceed, One Small Check
+
+Tell me:
+
+docker --version
+
+
+and:
+
+docker compose version
