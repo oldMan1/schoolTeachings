@@ -2,7 +2,7 @@
     "type": "MySQLNotebook",
     "version": "1.0",
     "caption": "DB Notebook",
-    "content": "\\about\nSHOW DATABASES;\nCREATE DATABASE IF NOT EXISTS STUDENT_ATTENDANCE;\nUSE STUDENT_ATTENDANCE;",
+    "content": "\\about\nSHOW DATABASES;\nCREATE DATABASE STUDENT_ATTENDANCE;\nUSE STUDENT_ATTENDANCE;\nCREATE TABLE STUDENTS(\nRollNumber INT PRIMARY KEY,\nSName VARCHAR(20),\nSDateOfBirth DATE,\nGUID CHAR(12)\n);\n",
     "options": {
         "tabSize": 4,
         "indentSize": 4,
@@ -15,22 +15,22 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 4,
-                    "column": 24
+                    "lineNumber": 11,
+                    "column": 1
                 },
                 "position": {
-                    "lineNumber": 4,
-                    "column": 24
+                    "lineNumber": 11,
+                    "column": 1
                 }
             }
         ],
         "viewState": {
             "scrollLeft": 0,
             "firstPosition": {
-                "lineNumber": 1,
+                "lineNumber": 2,
                 "column": 1
             },
-            "firstPositionDeltaTop": 0
+            "firstPositionDeltaTop": 61
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -48,12 +48,12 @@
                     "text": [
                         {
                             "type": 2,
-                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
                             "language": "ansi"
                         }
                     ]
                 },
-                "currentHeight": 102.984375,
+                "currentHeight": 118.390625,
                 "currentSet": 1,
                 "statements": [
                     {
@@ -77,10 +77,10 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "efb14129-5965-460f-bb85-987349efe21f"
+                        "2f348ce5-04b4-410e-aee6-0c54c9db76b0"
                     ]
                 },
-                "currentHeight": 173.96875,
+                "currentHeight": 186,
                 "currentSet": 1,
                 "statements": [
                     {
@@ -96,8 +96,8 @@
             },
             "data": [
                 {
-                    "tabId": "ca3d4edb-9b0e-4648-d066-d48198059a66",
-                    "resultId": "efb14129-5965-460f-bb85-987349efe21f",
+                    "tabId": "71c1c183-5e84-46da-a263-7cb46b89af5c",
+                    "resultId": "2f348ce5-04b4-410e-aee6-0c54c9db76b0",
                     "rows": [
                         {
                             "0": "information_schema"
@@ -109,10 +109,10 @@
                             "0": "performance_schema"
                         },
                         {
-                            "0": "STUDENT_ATTENDANCE"
+                            "0": "sys"
                         },
                         {
-                            "0": "sys"
+                            "0": "testdb"
                         }
                     ],
                     "columns": [
@@ -136,7 +136,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 5 records retrieved in 1.138ms"
+                        "text": "OK, 5 records retrieved in 1.744ms"
                     },
                     "totalRowCount": 5,
                     "hasMoreRows": false,
@@ -158,8 +158,8 @@
                         {
                             "type": 2,
                             "index": 0,
-                            "resultId": "de17e632-9243-4bef-cec6-f9e8cc643298",
-                            "content": "OK, 1 row affected in 5.216ms"
+                            "resultId": "389ad062-dfec-475a-d210-c2d774f05543",
+                            "content": "OK, 1 row affected in 35.388ms"
                         }
                     ]
                 },
@@ -170,7 +170,7 @@
                         "delimiter": ";",
                         "span": {
                             "start": 0,
-                            "length": 49
+                            "length": 35
                         },
                         "contentStart": 0,
                         "state": 0
@@ -190,8 +190,8 @@
                         {
                             "type": 2,
                             "index": 0,
-                            "resultId": "2c0c89a8-bf5c-4df8-c56f-fc8295be8302",
-                            "content": "OK, 0 records retrieved in 0.942ms"
+                            "resultId": "d8ff9af1-4086-43f5-9c00-8c6c52e4fa4c",
+                            "content": "OK, 0 records retrieved in 0.781ms"
                         }
                     ]
                 },
@@ -203,6 +203,58 @@
                         "span": {
                             "start": 0,
                             "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "8bd47e32-b3cc-4943-8f78-c95ce0ed273e",
+                            "content": "OK, 0 records retrieved in 98.127ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 105
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
                         },
                         "contentStart": 0,
                         "state": 0
