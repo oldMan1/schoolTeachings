@@ -1,0 +1,3 @@
+symbol=NIFTY
+timeframe=5min
+timezone=Asia/Kolkata
