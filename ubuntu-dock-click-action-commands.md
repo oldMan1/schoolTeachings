@@ -255,3 +255,14 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'focus-or-pre
 - It does not harm your stable Ubuntu setup.
 - Worst case: the dock feels different, and you reset it.
 
+
+
+
+
+
+
+
+
+
+
+gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'

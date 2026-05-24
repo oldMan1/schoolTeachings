@@ -1,0 +1,14 @@
+Priority order for you
+
+For practical Python, learn in this order:
+
+1. Counter       → counting
+2. deque         → queues/recent items/sliding window
+3. defaultdict   → grouping
+4. namedtuple    → readable fixed records
+5. ChainMap      → layered configuration
+6. OrderedDict   → special order operations
+7. UserDict      → custom dictionary
+8. UserList      → custom list
+9. UserString    → custom string
+10. collections.abc → advanced interface checking
