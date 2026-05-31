@@ -1,0 +1,4 @@
+SHOW TABLES;
+
+CREATE TABLE mytable(
+name VARCHAR(20));
