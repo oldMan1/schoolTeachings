@@ -1,1 +1,4 @@
 https://endor.dev/s/lamp
+
+
+http://localhost/phpmyadmin/index.php

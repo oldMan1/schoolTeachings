@@ -5,6 +5,8 @@
    Used for long explanations
 */
 
+# This is also a comment but single line
+
 SHOW DATABASES;
 
 CREATE DATABASE IF NOT EXISTS STUDENT_ATTENDANCE;
@@ -33,9 +35,25 @@ PRIMARY KEY(AttendanceDate, AttendanceStatus)
 
 );
 
+-- Linking tables using FOREIGN KEY constraints
+-- STUDENTS.GUID is linked with GUARDIAN.GUID
+-- This means every student record can be connected to a guardian record.
+
+ALTER TABLE STUDENTS
+ADD CONSTRAINT fk_students_guardian
+FOREIGN KEY (GUID)
+REFERENCES GUARDIAN(GUID);
+
+-- ATTENDANCE.RollNumber is linked with STUDENTS.RollNumber
+-- This means every attendance record belongs to a valid student.
+
+ALTER TABLE ATTENDANCE
+ADD CONSTRAINT fk_attendance_students
+FOREIGN KEY (RollNumber)
+REFERENCES STUDENTS(RollNumber);
+
 SHOW TABLES;
 
 DESCRIBE GUARDIAN;
-
 
 
